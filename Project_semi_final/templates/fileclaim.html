@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block head %} {% endblock %}
+{% block title %} New Customer {% endblock %}
+{% block content %}
+
+
+<div class="add" >
+	<section >
+		<form action="/fileclaim" method="POST">
+			<fieldset class="fieldform">
+				<legend>New Claim</legend>
+                
+				<label for="id" >Plan ID</label>
+				<input type="text" id="id" placeholder="Plan ID" name="id" required>
+                
+				<label for='customer'>Customer SSN</label>
+				<input type="text" id="customer" placeholder="Customer SSN" name="customer_ssn" required maxlength="14" minlength="14">
+
+				<label for="benficiary" >Claim benficiary SSN</label>
+				<input type="text" id="benficiary" placeholder="Benficiary SSN" name="benficiary_ssn" required maxlength="14" minlength="14">
+
+				<label for="num">Receipt Number</label>
+				<input type="text" id="num" placeholder="Receipt Number" name="Number"required>
+                
+                
+				<label for='hospital'>Hospital ID</label>
+				<input type="text" id='hospital' placeholder="Hospital ID" name="hospital_id" required>
+                
+				<label for="Expenses">Expenses</label>
+				<input type="text" id='Expenses' placeholder="Expenses" name="expenses" required>
+                
+				<label for="date">Date</label>
+				<input type="date" id='date' name="date" >
+                
+                <label for="des">Description</label>
+                <textarea  id="des" placeholder="description" name="des" ></textarea>
+
+				<input type="submit" class='btn'>
+			</fieldset>
+		</form>
+	</section>
+</div>
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+
+{% block head %}{% endblock %}
+{% block title %}Adding Hospital{% endblock %}
+{% block content %}
+<div class="add" >
+	<section >
+		<form action="/addhospital" method="POST">
+			<fieldset class="fieldform">
+				<legend>New Hospital</legend>
+				<label for="name" >Name</label>
+				<input type="text" id="name" placeholder="Name" name="Hospital_Name" required>
+	
+				<label for="spec">Specialization</label>
+				<input type="text" id="spec" placeholder="Specialization" name="Hospital_specialization" required>
+	
+				<label for="rate">Rating</label>
+				<input type="number" id="rate" placeholder="Rating" name="Hospital_rating" min='0' max="5" step = ".1" required >
+	
+				<label for='state'>State</label>
+				<input type="text" id="State" placeholder="State" name="Hospital_state" required>
+	
+				<label for='city'>City</label>
+				<input type="text" id='city' placeholder="City" name="Hospital_city" required >
+	
+				<label for="street">Street</label>
+				<input type="text" id='street' placeholder="Street" name="Hospital_street" required>
+	
+				<label>Type:</label>
+				<div class="checks">
+					<input type="checkbox" id="Basic" name="Basic" value="Basic">
+					<label for="Basic"> Basic</label>
+		
+					<input type="checkbox" id="Golden" name="Golden" value="Golden">
+					<label for="Golden"> Golden</label>
+					
+					<input type="checkbox" id="Premium" name="Premium" value="Premium">
+					<label for="Premium"> Premium</label>
+				</div>
+				{% if wrong == "Wrong" %}
+					<P style="color:red"> {{ data }}</P>
+			  	{% endif %}
+				{% if wrong == "success" %}
+					<P style="color:green"> {{ data }}</P>
+			  	{% endif %}
+				<input type="submit" class="btn">
+			</fieldset>
+		</form>
+	</section>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

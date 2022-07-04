@@ -1,0 +1,19 @@
+{% extends 'layout.html' %}
+
+{% block head %} {% endblock %}
+{% block title %} Home: Insuranc company {% endblock %}
+{% block content %}
+<div class="view" >
+	<form action="/fileclaimform" method="POST">
+        <fieldset class="fieldform">
+            <legend>Enter your Plan ID</legend>
+			<input type="text" placeholder="Plan ID" name="plan_id" required maxlength="15" >
+            <input type="submit" class="btn" name="submit_button">
+            {% if wrong == "Wrong" %}
+				<P style="color:red"> {{ data }}</P>
+			{% endif %}
+        </fieldset>
+	</form>
+</div>
+
+{% endblock %}

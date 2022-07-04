@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block head %} {% endblock %}
+{% block title %} New Customer {% endblock %}
+{% block content %}
+
+
+<div class="add" >
+	<section >
+		<form action="/addcustomer" method="POST">
+			<fieldset class="fieldform">
+				<legend>New customer</legend>
+                
+				<label for="ssn" >SSN</label>
+				<input type="text" id="ssn" placeholder="Social Security Number" name="ssn" required maxlength="14" minlength="14">
+                
+				<label for="fname" >First Name</label>
+				<input type="text" id="fname" placeholder="First Name" name="fname" required>
+				
+				<label for="lname" >Last Name</label>
+				<input type="text" id="lname" placeholder="Last Name" name="lname" required>
+
+				<label for="num">Phone Number</label>
+				<input type="text" id="num" placeholder="Phone Number" name="Number"  maxlength="11" minlength="11" required>
+                
+				<label for='state'>State</label>
+				<input type="text" id="State" placeholder="State" name="State" required>
+                
+				<label for='city'>City</label>
+				<input type="text" id='city' placeholder="City" name="City" required>
+                
+				<label for="street">Street</label>
+				<input type="text" id='street' placeholder="Street" name="Street" required>
+                
+				<label for="dob">Date of birth</label>
+				<input type="date" id='dob' placeholder="Date of Birth" name="dob" required>
+                
+                <label for="gen">Gender</label>
+                <select type="sel" id="gen" placeholder="Gender" name="Gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+				{% if wrong == "Wrong" %}
+					<P style="color:red"> {{ data }}</P>
+			  	{% endif %}
+				<input type="submit" class='btn'>
+			</fieldset>
+		</form>
+	</section>
+</div>
+{% endblock %}

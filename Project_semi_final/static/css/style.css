@@ -1,0 +1,416 @@
+:root{
+    --my-green:rgb(39, 129, 39);
+    --zaty:#252f31;
+}
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    background: rgb(170, 227, 250);
+    /*background: rgb(235, 234, 234);*/
+}
+
+.container
+{
+    width : 1000px;
+    margin : auto;
+    /*background-color: #a5a4a3;*/
+}
+
+.clear{clear: both;}
+
+h2,h3{text-transform: uppercase;color : #222}
+
+/* start header */
+.header .slider {
+    height: 550px;
+    background-size:1350px 550px;
+    background-color: darkgoldenrod;
+    /*box-shadow: 5px 12px 7px 5px rgba(70, 70, 70,50);*/
+    box-shadow: 2px 0 20px rgba(0,0,0,0.6);
+}
+
+.header .slider .intro{
+    padding-top: 100px;
+    text-align: center;
+    color :rgb(255, 255, 255)
+}
+
+.header .slider .intro h2{
+    font-size: 50px;
+    padding-top :10px;
+    border-top: 5px solid rgb(255, 255, 255);
+    width :550px;
+    margin :10px auto 0px auto;
+    text-transform: capitalize;
+    color: rgb(255, 255, 255);
+}
+
+.header .slider .intro h3{
+    font-size: 30px;
+    padding-bottom :10px;
+    border-bottom: 5px solid #fff;
+    width :550px;
+    margin :0px auto 10px auto;
+    text-transform: capitalize;
+    color: rgb(255, 255, 255);
+}
+.intro button {
+    font-size: 20px;
+    padding :10px 20px;
+    background: none;
+    border :3px solid #fff;
+    color :#fff;
+    margin-top: 20px;
+    font-weight: bold;
+    display: inline-block;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+button:hover,.btn:hover{
+background-color: #252f31;
+color: var(--my-green);
+}
+
+.header .navbar{
+    background-color: #252f31;
+    color : #fff;
+    overflow: hidden;
+}
+
+.header .navbar h2{float : left;color: #fff;}
+
+.header .navbar h2:first-letter{
+    font-weight: bold ;
+    color : var(--zaty);
+    background-color: #fff;
+     padding : 0px 2px; 
+     margin:3px 15px}
+
+.header .navbar h2 span{ color : var(--my-green)}
+
+.header .navbar ul{
+    list-style: none;
+    padding-left: 0px;
+    float: right;
+    overflow: hidden;
+    
+}
+.header .navbar ul li{
+    display : inline-block;
+    padding :5px;
+    margin: 5px;
+    border : 1px solid #fff;
+    text-transform: capitalize;
+    border-radius: 10%;
+}
+
+.header .navbar ul li a{
+    color:#fff;
+    text-decoration: none;
+}
+
+.header .navbar ul li a:hover{
+    color : var(--my-green)
+}
+
+/* end header */
+/*--------------------------------------------------------------------------------------------------------------------------*/
+.home{
+    background-color: wheat;
+    margin-top:25px;
+    border:1px solid var(--zaty);
+    border-radius: 10px ;
+    padding:20px 0px;
+    box-shadow:5px 12px 20px 3px rgba(70, 70, 70,3);
+    min-height: 750px; 
+}
+
+.btngroup{
+    margin:20px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    box-shadow:0 0 20px rgba(0, 0, 0,.4);
+    /* border-color: var(--zaty); */
+}
+.btn{
+    text-decoration: none;
+    text-align: center;
+    border:3px solid darkgreen;
+    border-radius: 5%;
+    color:black;
+    font-size: 20px;
+    padding :10px 20px;
+    background: none;
+    margin: 20px 25px;
+    margin-top:30px;
+    font-weight: bold;
+    display: inline-block;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+.plans{
+    margin-top: 20px;
+    font:20px bold var(--my-green);
+}
+.plans h2{
+    color:whitesmoke;
+    text-align: center;
+}
+
+.planset{
+    margin:20px;
+    padding:20px;
+    box-shadow:0 0 20px rgba(0, 0, 0,.4);
+
+}
+
+.plan{
+    width:33%;
+    padding:20px;
+    box-shadow:5px 12px 7px 5px rgba(70, 70, 70,50);
+    min-height: 550px;
+    display: inline-block;
+    transition-delay: .4s;
+    border-radius: 0 15px 0 0;
+}
+
+.plan:hover{
+    position: relative;
+    top:10px;
+    right:10px;
+    
+}   
+
+.basic{
+    margin-right: 5px;
+    background-color: rgb(172, 170, 170);
+}
+
+.premium{
+    width:32%;
+    margin-right: 5px;
+    background-color: rgb(42, 42, 212);
+
+}
+
+.golden{
+    background-color:darkgoldenrod;
+}
+
+.container h1{
+    width: 120px;
+    padding:5px 0px;margin:5px auto;font-weight:bold;font-size:45px;text-align:center;
+    text-shadow: 2px 1px 2px darkgoldenrod, 0 0 1em blue, 0 0 0.2em blue;
+}
+.container h1:hover{
+    color:var(--my-green)   
+}
+
+
+/*--------------------------------------------------------------------------------------------------------------------------*/
+/*start project*/
+/*>>>>>>>>>> TABLE <<<<<<<<<<*/
+.content-table{
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size:.9em;
+    background-color: whitesmoke;
+    border-radius: 5px 5px 0 0;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,0,0,0.15);
+    width: 100%;
+}
+.content-table thead tr {
+    background-color: #009879;
+    color: white;
+    text-align: left;
+    font-weight: bold;
+}
+
+.content-table th,
+.content-table td{
+    padding: 12px 15px;
+    text-transform: capitalize;
+}
+
+.content-table tbody tr {
+    border-bottom: 1px solid rgb(212, 212, 212);
+}
+
+.content-table tbody tr:nth-of-type(even) {
+    background-color: rgb(255, 255, 255);
+}
+
+.content-table tr:last-of-type {
+    border-bottom: 2px solid #007900;
+}
+
+
+/*>>>>>>>>>>> FORM <<<<<<<<<<<<<<<*/
+.fieldform{
+    width:clamp(50%,50%,100%);
+    margin: 2em auto;
+    padding: 1em 2em;
+    border: solid 2px var(--my-green);
+    border-radius: 6px;
+    min-width: 200px;
+    background-color: wheat;
+    box-shadow: 2px 0 20px rgba(0,0,0,0.6);
+}
+.width{
+    width: fit-content;
+    min-width:50% ;
+}
+
+.btn_td{
+    margin: 0%;
+    width: 100%;
+    
+}
+
+legend {
+    font-size:1.25em;
+    padding:0 .25em;
+    padding-bottom: 5px;
+    color:#999;
+}
+
+label{
+    display:block;
+    margin-top:1em;
+}
+
+.checks label {
+    margin-top:0;
+}
+
+label:first-of-type {
+    margin-top:0;
+}
+
+input ,select,textarea{
+    color:whitesmoke;
+    padding:.5em;
+    border: solid 1px #999;
+    border-radius: 5px;
+}
+
+input[type="email"] , input[type="text"],input[type="date"],input[type="number"]{
+    width:15em;
+    background-color: var(--zaty);
+}
+
+textarea {
+    min-height: 8em;
+    min-width:100%;
+    max-width:100%;
+    background-color: var(--zaty);
+    overflow: hidden;
+}
+
+.checks {
+    margin-bottom: 1em;
+}
+
+.checks p {
+    margin-bottom:0;
+}
+
+input[type="checkbox"] + label , input[type="radio"] + label{
+    display:inline-block;
+    padding-top:0;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+select{
+    display:block;
+    padding-top:0;
+    margin-top: 5px;
+    height: 2.5em;
+    width:15em;
+    color:white;
+    background-color: var(--zaty);
+}
+
+
+
+/*--------------------------------------------------------------------------------------------------------------------------*/
+/* start contact me */
+.contact{
+    background-color: #252f31;
+    overflow: hidden;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    margin-top: 10px;}
+
+.contact h2{
+    color: #fff;
+    text-transform: capitalize;
+    margin-left: 40px;}
+
+.contact p{
+    color :#6a6e71;
+    margin-left: 40px;}
+
+address{
+    color: #fff;
+    margin-left: 40px;}
+
+.contact .info {
+    width :50%;
+    float: left;
+}
+
+.contact .form{
+    width :45%;
+    margin-left: 5%;
+    float: left;
+}
+
+.contact  input[type="text"],.contact input[type="email"]{
+    width: 400px;
+    height: 35px;
+    background-color: rgb(2, 20, 18);
+    color: #fff;
+}
+
+.contact input[type="submit"]
+{ margin: 30px auto;
+    padding:5px 10px;
+    background-color: #191e22;
+    color: #fff;
+}
+
+.contact textarea
+{width: 400px;
+    height: 350px;
+    background-color: rgb(2, 20, 18);
+    overflow: auto;
+    color: #fff;
+}
+
+.contact label{ display:block;
+     margin-bottom: 5px;
+     margin-top: 20px;
+     text-transform: capitalize;
+     font-weight: bold;
+     color: rgb(1, 8, 6);
+    }
+
+
+
+/* end contact me */
+/*--------------------------------------------------------------------------------------------------------------------------*/
+/* start footer */
+.footer{
+    background-color: #191e22;
+    text-align: center;
+    padding : 20px 0px;
+    color : #6a6e71;
+}
+/* end footer */

@@ -1,0 +1,85 @@
+{% extends 'layout.html' %}
+
+{% block head %} {% endblock %}
+{% block title %} Home: Insuranc company {% endblock %}
+{% block content %}
+<div class = "home">
+    <fieldset class="btngroup">
+        <legend>Admin</legend>
+        <a href ="/addcustomer" class="btn"  title="adding a new Customer">
+        Add Customer
+        </a>
+        <a href="/adddependent" class="btn"  title="adding a new dependent for a current customer">
+        Add Dependent
+        </a>
+        <a href="/addhospital" class="btn"  title="adding a new hospital">
+        Add Hospital
+        </a>
+        <a href="/customerview" class="btn" target="_blank" title="view all current Customer">
+        view Customers
+        </a>
+        <a></a>
+        <a href="/viewClaims" class="btn" target="_blank" title="view all Claims">
+        View Claims
+        </a>
+    </fieldset>
+    <br>
+    <fieldset class="btngroup">
+        <legend>Customer</legend>
+        <a href="/purchaseplan" class="btn"  title="Purchasing a plan">
+        Purchase a plan
+        </a>
+        <a href="/hospitalview"  class="btn" target="_blank" title="view all Hospitals">
+        View Hospitals
+        </a>
+        <a  href="/howclaim" class="btn"  title="Filing a claim">
+        File a Claim
+        </a>
+    </fieldset>
+    <div class ="clear" ></div>
+</div>
+<br id = "plans">
+<div class="home">
+    <fieldset class='planset'>
+        <legend style="font-size:1.5em;">Plans</legend>
+        <div class="plans">
+            <a href="/purchaseplan"><div class='plan basic'>
+                <h2 >{{data[0][0]}}</h2>
+
+                <pre>
+    For Each Person
+    
+Deductible:{{data[0][1]}}$ 
+Co-payment:{{data[0][2]}}$
+out of pocket money:{{data[0][3]}}$
+Annual coverage limit:{{data[0][4]}}$
+                 </pre>
+            </div></a>
+            <a href="/purchaseplan"><div class='plan premium'>
+                <h2>{{data[2][0]}}</h2>
+                <pre>
+    For Each Person
+
+Deductible:{{data[2][1]}}$
+Co-payment:{{data[2][2]}}$
+out of pocket money:{{data[2][3]}}$
+Annual coverage limit:{{data[2][4]}}$
+                </pre>
+            </div></a>
+            <a href="/purchaseplan"><div class='plan golden'>
+                <h2>{{data[1][0]}}</h2>
+                <pre>
+    For Each Person
+
+Deductible:{{data[1][1]}}$
+Co-payment:{{data[1][2]}}$
+out of pocket money:{{data[1][3]}}$
+Annual coverage limit:{{data[1][4]}}$
+                </pre>
+            </div></a>
+        </div>
+    </fieldset>
+</div>
+<!-- start contact me -->
+
+{% endblock %}

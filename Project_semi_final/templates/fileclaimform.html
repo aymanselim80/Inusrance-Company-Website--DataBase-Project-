@@ -1,0 +1,54 @@
+{% extends 'layout.html' %}
+
+{% block head %} {% endblock %}
+{% block title %} Home: Insuranc company {% endblock %}
+{% block content %}
+<div class="add">
+    <fieldset class="fieldform">
+        <legend>file a claim</legend>
+        <form method="POST" action="/claimfiled">
+			<label>choose claim beneficiary</label>
+			{% for b in ben %}
+            <input type="radio" id="{{b[0]}}" name="beneficiary" value={{b[0]}} required>
+            <label for="{{b[0]}}"> {{b[1]}}  |  <span style="font-size: smaller;"> [SSN:<span style="color:rgb(39, 129, 39)">{{b[0]}}</span>]</span></label><br>
+			{% endfor %}
+			<label for="hospital">Hospital</label>
+			<select type="sel" id="hospital" placeholder="hospital" name="hospital" required>
+			{% for h in hospitals %}
+                    <option value={{h[0]}}>{{h[1]}}</option>
+			{% endfor %}
+			</select>
+			<label for="des">Description</label>
+			<textarea  id="des" placeholder="description" name="des" required ></textarea>
+			<label for="receipt">receipt number</label>
+            <input type="number" id="receipt" name="receipt"   required>
+			<label for="expenses">expenses</label>
+            <input type="number" id="expenses" name="expenses" min="1"  required>
+			<br>
+
+
+			<!-- <input type="hidden" name="needed" value={{needed}}>
+			<input type="hidden" name="hospitals" value={{hospitals}}>
+			<input type="hidden" name="ben" value={{ben}}> -->
+
+			{% for n in needed %}
+			 <input type="hidden" name="needed" value='{{n}}'>
+			{% endfor %}
+			{% for n in hospitals %}
+			<input type="hidden" name="hospitals_id" value='{{n[0]}}'>
+			<input type="hidden" name="hospitals_name" value='{{n[1]}}'>
+			{% endfor %}
+			{% for n in ben %}
+			 <input type="hidden" name="ben_ssn" value='{{n[0]}}'>
+			 <input type="hidden" name="ben_name" value='{{n[1]}}'>
+			{% endfor %}
+
+    		<input type="submit" class="btn" value="Submit">
+			{% if wrong=="wrong" %}
+				<p style="color: red;">Receipt Number already exits for this hospital</p>
+			{% endif %}
+        </form>
+    </fieldset>
+</div>
+
+{% endblock %}

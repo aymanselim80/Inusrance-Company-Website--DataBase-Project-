@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+{% block head %} {% endblock %}
+{% block title %} Claim Details {% endblock %}
+{% block content %}
+
+<div class="view" >
+  <fieldset class="fieldform">
+  <h2> Claim Details</h2>
+  <p>Claim ID : {{details[0]}}</p>
+  <p>Claim Beneficiary name : {{name[0][0]}} <br> Claim Beneficiary SSN : {{details[2]}}</p>
+  <p>Claim Date : {{details[3]}}</p>
+  <p>Description : {{details[6]}} <br> Expenses : {{details[5]}} <br> Receipt number : {{details[1]}}</p>
+  <p>Hospital : {{details[11]}}</p>
+  <p>Resolved : {{resolved}}</p>
+  {% if details[4] != 1%}
+  <form action="/claimDetails" method="post" >
+    <input type="checkbox" name="resolved" value={{details[0]}} id="mark_resolved">
+    <label for="mark_resolved">Mark as Resolved</label>
+    <input type="submit" class="btn" value="Submit">
+  </form>
+  {% endif %}
+    </fieldset>
+</div>
+
+
+{% endblock %}

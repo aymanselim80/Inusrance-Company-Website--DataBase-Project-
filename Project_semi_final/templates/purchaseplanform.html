@@ -1,0 +1,40 @@
+{% extends 'layout.html' %}
+
+{% block head %} {% endblock %}
+{% block title %} Fill the form {% endblock %}{% block content %}
+<div class="add">
+    <fieldset class="fieldform">
+        <legend>Purchase a plan</legend>
+        <form method="POST" action="/thanksforpurchasing">
+
+            <h4> Select beneficiaries </h4>
+            {% for i in range(ben_name|length) %}
+            <input type="hidden" name="ben_name" value='{{ben_name[i]}}'>
+            <input type="hidden" name="ben_ssn" value='{{ben_ssn[i]}}'>
+            <input type="checkbox" id={{ben_name[i]}} name="beneficiary" value='{{ben_ssn[i]}}'>
+            <label for={{ben_name[i]}}>{{ben_name[i]}} | <span style="font-size: smaller;"> [SSN:<span style="color:rgb(39, 129, 39)">{{ben_ssn[i]}}</span>]</span></label><br>
+            {% endfor %}
+
+            <h4>Please select plan type :</h4>
+            {% for plan in plans %}
+            <input type="radio" id="{{plan[0]}}" name="type" value={{plan[0]}} required>
+            <label for="{{plan[0]}}">{{plan[0]}}</label>
+            <pre>
+    For Each Person:
+    Deductible:{{plan[1]}}$
+    Co-payment:{{plan[2]}}$
+    out of pocket money:{{plan[3]}}$
+    Annual coverage limit:{{plan[4]}}$
+            </pre>
+            {% endfor %}
+    <input type="hidden" name="customer_ssn" value='{{customer_ssn}}'>
+    <input type="submit" class="btn" value="Submit">
+
+
+        </form>
+    {% if wrong =='wrong' %}
+        <p style="color:red;"> {{data}}</p>
+    {% endif %}
+    </fieldset>
+</div>
+{% endblock %}

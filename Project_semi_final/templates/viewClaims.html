@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{% block head %} {% endblock %}
+{% block title %} View Claims {% endblock %}
+{% block content %}
+
+<div class="view" >
+	<form action="#" method="POST">
+		<fieldset class="fieldform">
+			<legend>View Claims</legend>
+			
+			<label for="ssn" >Customer SSN</label>
+			<input type="text" id="ssn" placeholder="Social Security Number" name="ssn" required maxlength="14" minlength="14">
+			
+			<div style="padding-top:8px ;">
+				<input type="radio" id="All" name="Resolved?" value="All">
+				<label for="All">All</label>
+
+				<br>
+
+				<input type="radio" id="Unresolved" name="Resolved?" value="Unresolved">
+				<label for="Unresolved">Unresolved Only</label>
+
+			</div>
+			{% if wrong == "Wrong" %}
+				<P style="color:red"> {{ data }}</P>
+			{% endif %}
+			<input type="submit" class='btn' value="Search">
+		</fieldset>
+	</form>
+</div>
+
+
+
+{% endblock %}

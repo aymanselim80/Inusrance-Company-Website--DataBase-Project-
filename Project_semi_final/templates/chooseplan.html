@@ -1,0 +1,48 @@
+{% extends 'layout.html' %}
+
+{% block head %} {% endblock %}
+{% block title %} Home: Insuranc company {% endblock %}
+{% block content %}
+<div class="view" >
+	<form action="/fileclaimform" method="POST">
+        <fieldset class="fieldform">
+            <h2 style="margin: 25px;text-align: center;padding: 15px 0 0 0;">Choose a plan</h2>
+            <table class="content-table">
+                <thead>
+                    <tr>
+                    <th>Choice</th>
+                    <th>ID</th>
+                    <th>PlanType</th>
+                    <th>Beneficiary</th>
+                    <th>Beneficiary SSN</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for info in range(ourdata[3]) %}
+                    <tr>
+                        <td rowspan="{{ourdata[1][info] | length }}"><input type="radio" name='plan_id' value = {{ourdata[0][info][0]}}></td>
+                        <td rowspan="{{ourdata[1][info] | length }}">{{ ourdata[0][info][0] }}</td>
+                        <td rowspan="{{ourdata[1][info] | length }}">{{ ourdata[0][info][2] }}</td>
+                        <td>{{ ourdata[1][info][0] }}</td>
+                        <td>{{ ourdata[2][info][0] }}</td>
+                    </tr>
+                    {% for i in range (1 , ourdata[1][info] | length ) %}
+                    <tr>
+                        <td>{{ ourdata[1][info][i] }}</td>
+                        <td>{{ ourdata[2][info][i] }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% endfor %}
+                    <tr>
+                        <td colspan="5">
+                            <input type="submit" class="btn btn_td", value= "Select", name = "select_button">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+	</form>
+
+</div>
+
+
+{% endblock %}

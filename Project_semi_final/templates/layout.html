@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block head %} {% endblock %}
+    <title>{% block title %} {% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'css/style.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename = 'css/normalize.css')}}">
+
+</head>
+<body id ="home">
+    
+    <!-- start header-->
+
+    <div class ="header" style="position: -webkit-sticky;position: sticky;top: 0;">
+        <div class ="navbar" >
+            <div class ="container">
+                <h2>IInsure<span>ance</span></h2>
+                <ul>
+                    <li><a href ="/#home" title="Go to Home Page">home</a></li>
+                    <li><a href ="/#plans" title="Go to Plans">plans</a></li>
+                    <li><a href ="#home" title="Go to top of the Page">Go Up</a></li>
+                    <li><a href ="http://google.com" onclick="alert('Level 3 students team 9 2021/2022 \n here is google....., but don\'t google us')">about us</a></li>
+                    <li><a href ="#contact" title="Contact Form">contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class ="header" >
+        <div class ="slider" style=background-image:url({{ url_for('static', filename='image/Healthcare-and-medical-Insurance.webp') }})>
+            <div class ="intro">
+                <h2>Health Insurance</h2>
+                <h3>DataBase System</h3>
+                <form action="https://en.wikipedia.org/wiki/Health_insurance">
+                    <button type="submit" onclick="alert('hello world!!')">Learn More</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- end header-->
+    <div class ="clear"></div>  <!-- to clear float function-->
+    <div class='container'>
+        {% block content %} 
+    
+    
+        {% endblock %}
+    </div>
+    <div class ="contact" id="contact">
+        <div class ="container">
+            <div class ="info">
+                <h2>contact me</h2>
+                <p>this project was made by team 9</p>
+                <address >
+                    123 street name
+                    Tanta,Egypt.
+                    Tanta
+                </address>
+                <Br><br>
+                <p><strong style="color:#fff">E-mail:</strong>  my_mail@gmail.com</p>
+                <p><strong style="color:#fff">Phone:</strong>  01090661650</p>
+            </div>
+            <div class ="form">
+                <label>Name</label>
+                <input type="text" name="name" >
+                <label>E-Mail</label>
+                <input type="email" name="email">
+                <label>Phone</label>
+                <input type="text">
+                <label>description</label>
+                <textarea placeholder="Enter your message here"></textarea>
+                <input type="submit" onclick="alert('hello!! Not working right now check me later')">
+            </div>
+        </div>
+    </div>
+    <!-- end contact me -->
+    <div class ="footer">
+        <div class ="container">
+            Copyright &copy; 2022 Mrdoom24 inc.
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,22 @@
+{% extends 'layout.html' %}
+
+{% block head %} {% endblock %}
+{% block title %} Purchase a plan {% endblock %}
+{% block content %}
+<div class="add"  >
+    <fieldset class="fieldform">
+        <legend>Purchase a plan</legend>
+        <form method="POST" action="/purchaseplanform">
+
+          <label for="SSN">Enter your SSN</label>
+          <input type="text" id="SSN" name="SSN" minlength="14" maxlength="14">
+
+          <input type="submit" class="btn" value="Confirm">
+          <p style="color : red;">{{data}}</p>
+        </form>
+        {% if data == 'Wrong SSN Enter SSN again' %}
+        <p>or you can : <a href = '/addcustomer'> Register </a> </p>
+        {% endif %}
+    </fieldset>
+</div>
+{% endblock %}

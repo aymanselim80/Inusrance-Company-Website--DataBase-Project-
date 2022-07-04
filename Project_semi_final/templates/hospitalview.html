@@ -1,0 +1,88 @@
+{% extends 'layout.html' %}
+
+{% block head %}{% endblock %}
+{% block title %}Hosptal view{% endblock %}
+{% block content %}
+<div class="add">
+    <form action="#" method="POST">
+        <fieldset class="fieldform width">
+            <legend>View Hospitals</legend>
+            {% if (not ourdata) and (not hospitals) %}
+            <div>
+                <label>SSN:</label>
+                <input type="text" name="SSN" required maxlength="14" minlength="14">
+            </div>
+            <input type="submit" class="btn" name="submit_button">
+            {% endif %}
+            {% if ourdata and not hospitals %}
+            <h2 style="margin: 25px;text-align: center;padding: 15px 0 0 0;">Choose a plan</h2>
+            <table class="content-table">
+                <thead>
+                    <tr>
+                    <th>Choice</th>
+                    <th>ID</th>
+                    <th>PlanType</th>
+                    <th>Beneficiary</th>
+                    <th>Beneficiary SSN</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for info in range(ourdata[3]) %}
+                    <tr>
+                        <td rowspan="{{ourdata[1][info] | length }}"><input type="radio" name="activity" value = {{ourdata[0][info][2]}}></td>
+                        <td rowspan="{{ourdata[1][info] | length }}">{{ ourdata[0][info][0] }}</td>
+                        <td rowspan="{{ourdata[1][info] | length }}">{{ ourdata[0][info][2] }}</td>
+                        <td>{{ ourdata[1][info][0] }}</td>
+                        <td>{{ ourdata[2][info][0] }}</td>
+                    </tr>
+                    {% for i in range (1 , ourdata[1][info] | length ) %}
+                    <tr>
+                        <td>{{ ourdata[1][info][i] }}</td>
+                        <td>{{ ourdata[2][info][i] }}</td>
+                    </tr>
+                    {% endfor %}
+                    {% endfor %}
+                    <tr>
+                        <td colspan="5">
+                            <input type="submit" class="btn btn_td", value= "Select", name = "select_button">
+                        </td>
+                    </tr>
+                </tbody>    
+            </table>
+            <br>
+
+            {% endif %}
+            {% if hospitals %}
+            <h2 style="margin: 25px;text-align: center;padding: 15px 0 0 0;">Hospitals</h2>
+            <table class="content-table">
+                <thead>
+                    <tr>
+                    <th>ID</th>
+                    <th>Hospital_name</th>
+                    <th>Specialization</th>
+                    <th>Rating</th>
+                    <th>Address</th>
+                    </tr>
+                </thead>
+                {% for hospital in hospitals%}
+                <tr>
+                {% for i in hospital %}
+                    {% for j in i %}
+                        <td>{{j}}</td>
+                        {% endfor %} 
+                {% endfor %}
+                </tr>
+                {% endfor %}
+                </tr>
+            </table>
+           {% endif %}
+            {% if wrong == "Wrong" %}
+                <P style="color:red"> {{ data }}</P>
+            {% endif %} 
+        </fieldset>
+    </form>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}

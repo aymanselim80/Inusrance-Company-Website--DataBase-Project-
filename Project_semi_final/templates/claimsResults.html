@@ -1,0 +1,58 @@
+{% extends 'layout.html' %}
+{% block head %} {% endblock %}
+{% block title %} Claims Results {% endblock %}
+{% block content %}
+<div class="add" >
+	<section >
+		<form action="/claimDetails" method="POST">
+			<fieldset class="fieldform width">
+				<legend>Claims</legend>
+				<table class="content-table">
+					<thead>
+						<tr>
+							<th>Choice</th>
+							<th>ID</th>
+							<th>Plan ID</th>
+							<th>Beneficiary SSN</th>
+							<th>Date</th>
+							<th>Resolved</th>
+						</tr>
+					</thead>
+					{% for claim in claims %}
+					<tbody>
+						<tr>
+							<td><input type="radio" name="id" value = {{claim[0]}}></td>
+							<td>{{claim[0]}}</td>
+							<td>{{claim[1]}}</td>
+							<td>{{claim[2]}}</td>
+							<td>{{claim[3]}}</td>
+							{% if claim[4] == 1 %}
+							<td style="color:green;">Yes</td>
+							{% else %}
+							<td style="color:red;">NO</td>
+							{% endif %}
+
+							</tr>
+						{% endfor %}
+							<tr>
+								<td colspan="6">
+									<input type="submit" class="btn btn_td", value= "Select">
+								</td>
+							</tr>
+					</tbody>
+
+				</table>
+
+				{% if wrong == "Wrong" %}
+					<P style="color:red"> {{ data }}</P>
+			  	{% endif %}
+			</fieldset>
+		</form>
+	</section>
+</div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block head %}{% endblock %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="add" >
+	<form action="/adddependent" method="POST">
+	<fieldset class="fieldform">
+		<legend>Add Dependent</legend>
+		
+		<label for="ssn" >Customer SSN</label>
+		<input type="text" id="ssn" placeholder="Customer Social Security Number" name="CustomerSSN" required maxlength="14" minlength="14">
+		
+		<label for="num">Dependent SSN</label>
+		<input type="text" id="num" placeholder="Social Security Number" name="dependentSSN" required maxlength="14" minlength="14">
+
+		<label for="name" >Name</label>
+		<input type="text" id="name" placeholder="Full Name"  name="dependentName" required >
+		
+		<label for="re" >Relationship</label>
+		<input type="text" id="re" placeholder="Relationship"  name="Relationship" required >
+
+		<label for="dob">Date of birth</label>
+		<input type="date" id='dob' placeholder="Date of Birth" name="dob" required>
+			
+		<label for="gen">Gender</label>
+		<select type="sel" id="gen" placeholder="Gender" name="Gender" required>
+			<option value="Male">Male</option>
+			<option value="Female">Female</option>
+		</select>
+    {% if wrong == "Wrong" %}
+      <P style="color:red"> {{ data }}</P>
+    {% endif %}
+    {% if wrong == "success" %}
+      <P style="color:green"> {{ data }}</P>
+    {% endif %}
+		<input type="submit" class='btn'>
+		</fieldset>
+	</form>
+</div>
+{% endblock %}
+
+{% block footer %}
+{% endblock %}
